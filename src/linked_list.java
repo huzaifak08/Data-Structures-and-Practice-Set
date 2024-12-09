@@ -68,6 +68,32 @@ class LinkedList{
 
     }
 
+    public void insertAfter(int data, int position){
+        if (position == 0){
+            insertAtBeginning(data);
+            return;
+        }
+
+        Node newNode = new Node(data);
+        int currentPosition = 0;
+        Node current = head;
+        Node previous = null;
+
+        while (current != null && currentPosition < (position+1)){
+            previous = current;
+            current = current.next;
+            currentPosition++;
+        }
+
+        if(currentPosition < (position+1)){
+            System.out.println("Position Exceed list length");
+        }
+
+        previous.next = newNode;
+        newNode.next = current;
+
+    }
+
     public void display(){
         Node current = head;
 
@@ -86,11 +112,15 @@ public class linked_list {
 
         list.insertAtEnd(2);
         list.insertAtEnd(4);
-//        list.insertAtEnd(8);
+        list.insertAtEnd(8);
+        list.insertAtEnd(9);
 
         list.insertAtBeginning(88);
 
-        list.insertAt(1,1);
+//        list.insertAt(1,1);
+
+        list.insertAfter(99,1);
+
 
         list.display();
 
