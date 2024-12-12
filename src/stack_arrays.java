@@ -22,6 +22,35 @@ class Stack {
         }
         return  false;
     }
+
+    public void push(int data){
+        if(isFull()){
+            System.out.println("Stack overflow");
+            return;
+        }
+
+        top++;
+        arr[top] = data;
+    }
+
+    public int pop(){
+        if(isEmpty()){
+            System.out.println("Stack is Already empty");
+            return 0;
+        }
+
+        int valueToReturn = arr[top];
+
+        arr[top] = 0;
+        top--;
+        return valueToReturn;
+    }
+
+    public void display(){
+        for(int index=0; index<arr.length; index++){
+            System.out.println(arr[index]);
+        }
+    }
 }
 
 
@@ -47,5 +76,17 @@ public class stack_arrays {
         }else{
             System.out.println("Stack is not Full");
         }
+
+        // Push:
+        stack.push(8);
+        stack.push(9);
+        stack.push(10);
+
+        // Pop:
+        int result = stack.pop();
+        System.out.println("Poped Value from stakc is: "+ result);
+
+        // Traverse:
+        stack.display();
     }
 }
