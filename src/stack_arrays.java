@@ -46,8 +46,21 @@ class Stack {
         return valueToReturn;
     }
 
+    public int peek(int position){
+        if((top - position)+1 < 0){
+            return -1;
+        }
+
+        return arr[((top-position)+1)];
+    }
+
     public void display(){
-        for(int index=0; index<arr.length; index++){
+//        for(int index=0; index<arr.length; index++){
+//            System.out.println(arr[index]);
+//        }
+
+        // Reverse Traversing for Display Stack:
+        for(int index = top; index >=0; index--){
             System.out.println(arr[index]);
         }
     }
@@ -83,8 +96,12 @@ public class stack_arrays {
         stack.push(10);
 
         // Pop:
-        int result = stack.pop();
-        System.out.println("Poped Value from stakc is: "+ result);
+//        int result = stack.pop();
+//        System.out.println("Poped Value from stack is: "+ result);
+
+        // Peek:
+        int peekValue = stack.peek(3);
+        System.out.println("Peek Value: "+ peekValue);
 
         // Traverse:
         stack.display();
