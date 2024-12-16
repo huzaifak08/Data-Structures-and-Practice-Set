@@ -174,7 +174,6 @@ class LinkedList {
             System.out.print(current.data + " ");
             current = current.next;
         }
-
     }
 }
 
@@ -190,18 +189,18 @@ public class linked_list {
         list.insertAtEnd(8);
         list.insertAtEnd(9);
 
-//      list.insertAtBeginning(88);
-//      list.insertAt(1,1);
-//      list.insertAfter(99,1);
+        list.insertAtBeginning(88);
+        list.insertAt(1,1);
+        list.insertAfter(99,1);
 
         int[] arr = {10, 20, 30, 40};
-//      list.insertArrayAtBeginning(arr);
+        list.insertArrayAtBeginning(arr);
 
         // ====================> DELETE OPERATIONS:
 
-//          list.deleteHead();
-//          list.deleteAt(3);
-//          list.deleteAtEnd();
+        list.deleteHead();
+        list.deleteAt(3);
+        list.deleteAtEnd();
         list.deleteAtData(4);
 
         // ====================> DISPLAY OPERATIONS:
