@@ -11,7 +11,6 @@ class Node {
 class LinkedList {
     Node head;
 
-
     public LinkedList() {
         head = null;
     }
