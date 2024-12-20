@@ -4,7 +4,15 @@ public class bubble_sort {
 
         int n = arr.length;
 
+        /*
+        Number of Pass is (n-1) because the last pass has only one
+        element left, which is already the smallest one so no need
+        to run a next pass for only one element.
+         */
         for(int pass = 0; pass < (n - 1); pass++){
+
+
+            // In each pass, each element get sorted
             for(int index = 0; index < (n-1-pass); index++){
 
                 if(arr[index]>arr[index+1])
@@ -14,7 +22,6 @@ public class bubble_sort {
                     arr[index] = arr[index+1];
                     arr[index+1] = temp;
                 }
-
             }
         }
     }
