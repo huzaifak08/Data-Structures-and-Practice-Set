@@ -15,7 +15,7 @@ public class bubble_sort {
             // In each pass, each element get sorted
             for(int index = 0; index < (n-1-pass); index++){
 
-                if(arr[index]>arr[index+1])
+                if(arr[index] > arr[index+1])
                 {
                     // Swap:
                     int temp = arr[index];
