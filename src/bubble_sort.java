@@ -1,9 +1,10 @@
 public class bubble_sort {
-    // Bubble Sort:
+    /* Bubble Sort: is not adoptive, but we can make it adoptive
+     using isSorted variable */
     public static void bubbleSort(int[] arr){
 
         int n = arr.length;
-
+        boolean isSorted = true;
         /*
         Number of Pass is (n-1) because the last pass has only one
         element left, which is already the smallest one so no need
@@ -11,8 +12,7 @@ public class bubble_sort {
          */
         for(int pass = 0; pass < (n - 1); pass++){
 
-
-            // In each pass, each element get sorted
+            // In each pass, each element get sorted (Comparisons)
             for(int index = 0; index < (n-1-pass); index++){
 
                 if(arr[index] > arr[index+1])
@@ -21,6 +21,13 @@ public class bubble_sort {
                     int temp = arr[index];
                     arr[index] = arr[index+1];
                     arr[index+1] = temp;
+
+                    // Sorted Flag
+                    isSorted = false;
+                }
+
+                if(isSorted){
+                    return;
                 }
             }
         }
@@ -35,6 +42,7 @@ public class bubble_sort {
 
     public static void main(String[] args){
         int[] arr = {7,4,35,28,1};
+//        int[] arr = {2,3,4,5,6,8};
 
         display(arr);
         System.out.println();
