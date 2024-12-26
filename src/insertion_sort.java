@@ -18,12 +18,12 @@ public class insertion_sort {
     //    07 12 54 54 | 65 09 --> Pass:4 , Key:23, Index:1
     //    07 12 23 54 | 65 09 --> Pass:4 , Key:23, Index:-1
 
-    //    07 12 23 54 65 | 09 --> Pass:4 , Key:09, Index:4
-    //    07 12 23 54 65 | 65 --> Pass:4 , Key:09, Index:4
-    //    07 12 23 54 54 | 65 --> Pass:4 , Key:09, Index:3
-    //    07 12 23 23 54 | 65 --> Pass:4 , Key:09, Index:2
-    //    07 12 12 23 54 | 65 --> Pass:4 , Key:09, Index:1
-    //    07 09 12 23 54 | 65 --> Pass:4 , Key:09, Index:0
+    //    07 12 23 54 65 | 09 --> Pass:5 , Key:09, Index:4
+    //    07 12 23 54 65 | 65 --> Pass:5 , Key:09, Index:4
+    //    07 12 23 54 54 | 65 --> Pass:5 , Key:09, Index:3
+    //    07 12 23 23 54 | 65 --> Pass:5 , Key:09, Index:2
+    //    07 12 12 23 54 | 65 --> Pass:5 , Key:09, Index:1
+    //    07 09 12 23 54 | 65 --> Pass:5 , Key:09, Index:0
 
     // Insertion Sort:
     public static void insertionSort(int[] arr) {
