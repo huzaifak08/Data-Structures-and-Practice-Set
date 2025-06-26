@@ -1,4 +1,4 @@
-public class longest_common_prefix {
+public class ps_14_longest_common_prefix {
 
     public static String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) {

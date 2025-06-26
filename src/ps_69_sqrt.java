@@ -1,4 +1,4 @@
-public class sqrt {
+public class ps_69_sqrt {
     public static int mySqrt (int x){
         if(x <= 0){
             return 0;

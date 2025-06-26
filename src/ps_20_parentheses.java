@@ -1,6 +1,4 @@
-import java.util.Objects;
-
-public class parentheses {
+public class ps_20_parentheses {
 
     public static char toBeSearched(char bracket){
         if(bracket == '(' ){

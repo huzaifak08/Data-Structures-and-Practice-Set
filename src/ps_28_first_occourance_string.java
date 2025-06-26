@@ -1,4 +1,4 @@
-public class first_occourance_string {
+public class ps_28_first_occourance_string {
 
     public static int strStr(String haystack, String needle) {
 

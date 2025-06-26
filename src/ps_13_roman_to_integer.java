@@ -1,4 +1,4 @@
-public class roman_to_integer {
+public class ps_13_roman_to_integer {
     public static int romanToInt(String s) {
 
         int result = 0;

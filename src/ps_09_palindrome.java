@@ -1,4 +1,4 @@
-public class lc_palindrome {
+public class ps_09_palindrome {
 
     // palindrome Method:
     public static boolean isPalindrome(int x){

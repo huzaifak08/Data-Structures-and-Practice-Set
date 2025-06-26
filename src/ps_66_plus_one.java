@@ -1,4 +1,4 @@
-public class plus_one {
+public class ps_66_plus_one {
     public static int[] plusOne(int[] digits) {
         int digit = arrayToInteger(digits);
 

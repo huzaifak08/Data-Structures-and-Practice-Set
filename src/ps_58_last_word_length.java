@@ -1,4 +1,4 @@
-public class last_word_length {
+public class ps_58_last_word_length {
     public static int lengthOfLastWord(String s) {
         // Initial variables:
         int count = 0;

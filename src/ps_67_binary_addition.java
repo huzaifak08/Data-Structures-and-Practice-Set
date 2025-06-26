@@ -1,4 +1,4 @@
-public class binary_addition {
+public class ps_67_binary_addition {
     public static String addBinary(String a, String b) {
         int length = Math.max(a.length(),b.length());
 

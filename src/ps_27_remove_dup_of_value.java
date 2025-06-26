@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class remove_dup_of_value {
+public class ps_27_remove_dup_of_value {
     public static int removeElement(int[] nums, int val) {
 
         int i =0;

@@ -1,4 +1,4 @@
-public class remove_duplicates_array {
+public class ps_26_remove_duplicates_array {
 
     public static int removeDuplicates(int[] nums) {
 
