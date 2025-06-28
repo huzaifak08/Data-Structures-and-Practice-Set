@@ -18,20 +18,20 @@ public class merge_sort {
             }else{
                 newArray[indexX++] = arr[index2++];
             }
+        }
 
-            // In case of one array completed:
-            while (index1 <= mid){
-                newArray[indexX++] = arr[index1++];
-            }
+        // In case of one array completed:
+        while (index1 <= mid){
+            newArray[indexX++] = arr[index1++];
+        }
 
-            while (index2 <= high){
-                newArray[indexX++] = arr[index2++];
-            }
+        while (index2 <= high){
+            newArray[indexX++] = arr[index2++];
+        }
 
-            // Copy the sorted elements back to the original array
-            for(int index = 0; index < newArray.length; index++){
-                arr[low + index] = newArray[index];
-            }
+        // Copy the sorted elements back to the original array
+        for(int index = 0; index < newArray.length; index++){
+            arr[low + index] = newArray[index];
         }
     }
 
