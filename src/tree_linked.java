@@ -10,6 +10,7 @@ class TreeNode{
     }
 }
 public class tree_linked {
+    static TreeNode prev = null;
 
     public static void preOrderTraversal(TreeNode root ){
         if(root != null){
@@ -35,20 +36,43 @@ public class tree_linked {
         }
     }
 
+    // Check if the tree is Binary search tree:
+    public static boolean isBST(TreeNode root) {
+        if (root != null) {
+            if (!isBST(root.left)) {
+                System.out.println("root.left");
+                return false;
+            }
+
+            if (prev != null && root.data <= prev.data) {
+                System.out.println("root.data");
+                return false;
+            }
+
+            prev = root;
+
+            if (!isBST(root.right)) {
+                System.out.println("root.right");
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public static void main(String[] args){
 
-        //      4
+        //      5
         //     / \
-        //    1   6
+        //    3   6
         //   / \
-        //  5   2
+        //  1   4
 
-        TreeNode root = new TreeNode(4);
-        TreeNode p1 = new TreeNode(1);
+        TreeNode root = new TreeNode(5);
+        TreeNode p1 = new TreeNode(3);
         TreeNode p2 = new TreeNode(6);
-        TreeNode p3 = new TreeNode(5);
-        TreeNode p4 = new TreeNode(2);
+        TreeNode p3 = new TreeNode(1);
+        TreeNode p4 = new TreeNode(4);
 
         root.left = p1;
         root.right = p2;
@@ -62,6 +86,10 @@ public class tree_linked {
 
         System.out.println();
         inOrderTraversal(root);
+
+        System.out.println();
+       Boolean result = isBST(root);
+        System.out.println(result);
 
     }
 }
