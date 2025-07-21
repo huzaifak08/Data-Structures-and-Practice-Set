@@ -59,6 +59,24 @@ public class tree_linked {
         return true;
     }
 
+    // Check for element in BST:
+    static TreeNode searchElementInBST(TreeNode root, int val){
+
+        if(root != null){
+            if(root.data == val){
+                return root;
+            }
+
+            if(root.data > val){
+                return searchElementInBST(root.left,val);
+            }else{
+                return searchElementInBST(root.right,val);
+            }
+        }else{
+            return null;
+        }
+    }
+
 
     public static void main(String[] args){
 
@@ -90,6 +108,10 @@ public class tree_linked {
         System.out.println();
        Boolean result = isBST(root);
         System.out.println(result);
+
+        System.out.println("Searching Element in BST:");
+        TreeNode elem = searchElementInBST(root, 1);
+        System.out.println("Element Found: "+elem.data);
 
     }
 }
