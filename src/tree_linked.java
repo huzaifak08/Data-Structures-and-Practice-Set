@@ -77,6 +77,21 @@ public class tree_linked {
         }
     }
 
+    static TreeNode iterativeSearch(TreeNode root, int val){
+        while (root != null){
+            if(root.data == val){
+                return root;
+            }
+
+            if(val > root.data){
+                root = root.right;
+            }else{
+                root = root.left;
+            }
+        }
+        return null;
+    }
+
 
     public static void main(String[] args){
 
@@ -112,6 +127,10 @@ public class tree_linked {
         System.out.println("Searching Element in BST:");
         TreeNode elem = searchElementInBST(root, 1);
         System.out.println("Element Found: "+elem.data);
+
+        System.out.println("Iterative Searching in BST:");
+        TreeNode element = searchElementInBST(root, 4);
+        System.out.println("Element Found: "+element.data);
 
     }
 }
