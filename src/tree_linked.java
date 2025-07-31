@@ -91,6 +91,30 @@ public class tree_linked {
         }
         return null;
     }
+    
+    static void insertionInBST(TreeNode root, int val){
+        TreeNode prev = null;
+        
+        while (root != null){
+            prev = root;
+            if(root.data == val){
+                System.out.println("Element already in BST");
+                return;
+            } else if (val < root.data) {
+                root = root.left;
+            }else{
+                root = root.right;
+            }
+        }
+
+        TreeNode newNode = new TreeNode(val);
+
+        if(val < prev.data){
+            prev.left = newNode;
+        }else{
+            prev.right = newNode;
+        }
+    }
 
 
     public static void main(String[] args){
@@ -128,8 +152,10 @@ public class tree_linked {
         TreeNode elem = searchElementInBST(root, 1);
         System.out.println("Element Found: "+elem.data);
 
+        insertionInBST(root,7);
+
         System.out.println("Iterative Searching in BST:");
-        TreeNode element = searchElementInBST(root, 4);
+        TreeNode element = searchElementInBST(root, 7);
         System.out.println("Element Found: "+element.data);
 
     }
