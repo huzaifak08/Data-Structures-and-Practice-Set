@@ -116,6 +116,32 @@ public class tree_linked {
         }
     }
 
+    static TreeNode inOrderSuccessor(TreeNode root,int val){
+        TreeNode target = searchElementInBST(root,val);
+
+        if(target.right != null){
+            TreeNode current = target.right;
+            if(current.left != null){
+                return current.left;
+            }
+            return current;
+        }
+
+        TreeNode successor = null;
+        TreeNode current = root;
+
+        while (current != null){
+            if(val < current.data){
+                successor = current;
+                current = current.left;
+            }else if(val > current.data){
+                current = current.right;
+            }else{
+                break;
+            }
+        }
+        return successor;
+    }
 
     public static void main(String[] args){
 
@@ -136,10 +162,10 @@ public class tree_linked {
         p1.left = p3;
         p1.right = p4;
 
-        preOrderTraversal(root);
+//        preOrderTraversal(root);
 
         System.out.println();
-        postOrderTraversal(root);
+//        postOrderTraversal(root);
 
         System.out.println();
         inOrderTraversal(root);
@@ -157,6 +183,9 @@ public class tree_linked {
         System.out.println("Iterative Searching in BST:");
         TreeNode element = searchElementInBST(root, 7);
         System.out.println("Element Found: "+element.data);
+
+        TreeNode successor = inOrderSuccessor(root, 4);
+        System.out.println("In order successor is: "+successor.data);
 
     }
 }
