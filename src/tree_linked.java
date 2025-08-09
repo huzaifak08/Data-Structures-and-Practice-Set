@@ -143,6 +143,32 @@ public class tree_linked {
         return successor;
     }
 
+    static TreeNode inOrderPredecessor(TreeNode root, int val){
+        TreeNode target = searchElementInBST(root,val);
+
+        if(target.left != null){
+            TreeNode current = target.left;
+            if(current.right != null){
+                return current.right;
+            }
+            return current;
+        }
+
+        TreeNode predecessor = null;
+        TreeNode current = root;
+
+        // Either handle the match state in while condition or in inside else condition (as in successor)
+        while (current != null && current.data != target.data){
+            if(current.data < val){
+                predecessor = current;
+                current = current.right;
+            }else if(current.data > val){
+                current = current.left;
+            }
+        }
+        return predecessor;
+    }
+
     public static void main(String[] args){
 
         //      5
@@ -186,6 +212,9 @@ public class tree_linked {
 
         TreeNode successor = inOrderSuccessor(root, 4);
         System.out.println("In order successor is: "+successor.data);
+
+        TreeNode predecessor = inOrderPredecessor(root, 4);
+        System.out.println("In order predecessor is: "+predecessor.data);
 
     }
 }
