@@ -169,6 +169,36 @@ public class tree_linked {
         return predecessor;
     }
 
+    static TreeNode deleteFromBST(TreeNode root, int val){
+        if(root == null){
+            return null;
+        }
+
+        if(val < root.data){
+         root.left = deleteFromBST(root.left,val);
+        } else if (val > root.data) {
+           root.right = deleteFromBST(root.right,val);
+        }else{
+            // Found the node to delete:
+            // Case 1: No child
+            if(root.left == null && root.right == null){
+                return null;
+            }
+
+            // Case 2: One child
+            if(root.left == null) return root.right;
+            if(root.right == null) return root.left;
+
+            // Case 3: two Children
+            TreeNode predecessor = root.left;
+            while (predecessor.right != null) predecessor = predecessor.right;
+
+            root.data = predecessor.data;
+            root.left = deleteFromBST(root.left,predecessor.data);
+        }
+        return root;
+    }
+
     public static void main(String[] args){
 
         //      5
@@ -190,31 +220,36 @@ public class tree_linked {
 
 //        preOrderTraversal(root);
 
-        System.out.println();
+//        System.out.println();
 //        postOrderTraversal(root);
 
-        System.out.println();
+//        System.out.println();
+//        inOrderTraversal(root);
+//
+//        System.out.println();
+//       Boolean result = isBST(root);
+//        System.out.println(result);
+
+//        System.out.println("Searching Element in BST:");
+//        TreeNode elem = searchElementInBST(root, 1);
+//        System.out.println("Element Found: "+elem.data);
+
+//        insertionInBST(root,7);
+
+//        System.out.println("Iterative Searching in BST:");
+//        TreeNode element = searchElementInBST(root, 7);
+//        System.out.println("Element Found: "+element.data);
+
+//        TreeNode successor = inOrderSuccessor(root, 4);
+//        System.out.println("In order successor is: "+successor.data);
+//
+//        TreeNode predecessor = inOrderPredecessor(root, 4);
+//        System.out.println("In order predecessor is: "+predecessor.data);
+
+        deleteFromBST(root,4);
+
+        System.out.println("After Deletion: ");
         inOrderTraversal(root);
-
-        System.out.println();
-       Boolean result = isBST(root);
-        System.out.println(result);
-
-        System.out.println("Searching Element in BST:");
-        TreeNode elem = searchElementInBST(root, 1);
-        System.out.println("Element Found: "+elem.data);
-
-        insertionInBST(root,7);
-
-        System.out.println("Iterative Searching in BST:");
-        TreeNode element = searchElementInBST(root, 7);
-        System.out.println("Element Found: "+element.data);
-
-        TreeNode successor = inOrderSuccessor(root, 4);
-        System.out.println("In order successor is: "+successor.data);
-
-        TreeNode predecessor = inOrderPredecessor(root, 4);
-        System.out.println("In order predecessor is: "+predecessor.data);
 
     }
 }
