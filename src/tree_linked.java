@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class TreeNode{
     int data;
     TreeNode left;
@@ -11,6 +14,7 @@ class TreeNode{
 }
 public class tree_linked {
     static TreeNode prev = null;
+    static List<Integer> integerList = new ArrayList<Integer>();
 
     public static void preOrderTraversal(TreeNode root ){
         if(root != null){
@@ -246,10 +250,10 @@ public class tree_linked {
 //        TreeNode predecessor = inOrderPredecessor(root, 4);
 //        System.out.println("In order predecessor is: "+predecessor.data);
 
-        deleteFromBST(root,4);
+//        deleteFromBST(root,4);
 
-        System.out.println("After Deletion: ");
-        inOrderTraversal(root);
+//        System.out.println("After Deletion: ");
+//        inOrderTraversal(root);
 
     }
 }
